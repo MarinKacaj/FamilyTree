@@ -1,14 +1,11 @@
 package com.family.tree.person;
 
 import com.family.tree.city.City;
-import com.google.auto.value.AutoValue;
-import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
-@AutoValue
 public abstract class Person {
 
     protected final Female mother;
@@ -22,7 +19,7 @@ public abstract class Person {
     protected final Integer deathYear;
     public final PersonFilter filter;
 
-    protected Person(@Nullable Female mother, Male father, boolean isAdopted, String firstName, String lastName,
+    protected Person(Female mother, Male father, boolean isAdopted, String firstName, String lastName,
                      City bornIn, Integer birthYear, Integer deathYear) {
         this.mother = mother;
         this.father = father;
