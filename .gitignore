@@ -29,3 +29,6 @@ target/generated-sources/
 target/generated-test-sources/
 
 .idea/workspace.xml
+.idea/FamilyTree.iml
+.idea/libraries/
+.idea/modules.xml
