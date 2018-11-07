@@ -1,12 +1,23 @@
 package com.family.tree.person;
 
 import com.family.tree.city.City;
+import com.lambdazen.bitsy.BitsyGraph;
+import org.apache.tinkerpop.gremlin.structure.Vertex;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class Person {
+public abstract class Person implements Persistent {
+
+    public static final String MOTHER = "mother";
+    public static final String FATHER = "father";
+    public static final String IS_ADOPTED = "isAdopted";
+    public static final String FIRST_NAME = "firstName";
+    public static final String LAST_NAME = "lastName";
+    public static final String BORN_IN = "lastName";
+    public static final String BIRTH_YEAR = "lastName";
+    public static final String DEATH_YEAR = "deathName";
 
     protected final Female mother;
     protected final Male father;
@@ -57,5 +68,29 @@ public abstract class Person {
 
     public Optional<Integer> deathYear() {
         return Optional.ofNullable(deathYear);
+    }
+
+    @Override
+    public Vertex toGraph(BitsyGraph graph) {
+        Vertex own = graph.addVertex(
+                IS_ADOPTED, isAdopted,
+                FIRST_NAME, firstName,
+                LAST_NAME, lastName,
+                BORN_IN, bornIn,
+                BIRTH_YEAR, birthYear,
+                DEATH_YEAR, deathYear);
+        mother().ifPresent(mother -> {
+            Vertex motherVertex = mother.toGraph(graph);
+            own.addEdge(MOTHER, motherVertex);
+        });
+        father().ifPresent(father -> {
+            Vertex fatherVertex = father.toGraph(graph);
+            own.addEdge(FATHER, fatherVertex);
+        });
+        city().ifPresent(city -> {
+            Vertex cityVertex = city.toGraph(graph);
+            own.addEdge(BORN_IN, cityVertex);
+        });
+        return own;
     }
 }
