@@ -4,12 +4,6 @@ import com.family.tree.person.fixture.PersonFixture;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.List;
-
-import static java.util.Arrays.asList;
-import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.junit.Assert.assertThat;
-
 public class PersonFilterTest {
 
     private Person gen0Child1;
@@ -36,8 +30,6 @@ public class PersonFilterTest {
 
     @Test
     public void descendants() {
-        List<Person> descendantsFF = gen2FF.filter.descendants();
-        assertThat(asList(gen1Father, gen0Child1, gen0Child2), containsInAnyOrder(descendantsFF));
     }
 
     @Test
