@@ -90,7 +90,7 @@ public abstract class Person implements Persistent {
                 own.addEdge(FATHER, fatherVertex);
             });
             city().ifPresent(city -> {
-                Vertex cityVertex = city.toGraph(graph);
+                Vertex cityVertex = city.toGraph(uniqueCheckerProvider);
                 own.addEdge(BORN_IN, cityVertex);
             });
             return own;
