@@ -1,7 +1,7 @@
 package com.family.tree.country;
 
-import com.family.tree.person.Persistent;
-import com.lambdazen.bitsy.BitsyGraph;
+import com.family.tree.persistence.Persistent;
+import com.family.tree.persistence.UniqueCheckerProvider;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 
 public class Country implements Persistent {
@@ -15,7 +15,8 @@ public class Country implements Persistent {
     }
 
     @Override
-    public Vertex toGraph(BitsyGraph graph) {
-        return graph.addVertex(NAME, name);
+    public Vertex toGraph(UniqueCheckerProvider uniqueCheckerProvider) {
+        return uniqueCheckerProvider.forPersistent(this)
+                .getVertex(graph -> graph.addVertex(NAME, name));
     }
 }

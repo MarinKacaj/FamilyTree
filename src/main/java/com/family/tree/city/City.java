@@ -1,8 +1,8 @@
 package com.family.tree.city;
 
 import com.family.tree.country.Country;
-import com.family.tree.person.Persistent;
-import com.lambdazen.bitsy.BitsyGraph;
+import com.family.tree.persistence.Persistent;
+import com.family.tree.persistence.UniqueCheckerProvider;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 
 public class City implements Persistent {
@@ -19,9 +19,11 @@ public class City implements Persistent {
     }
 
     @Override
-    public Vertex toGraph(BitsyGraph graph) {
-        Vertex own = graph.addVertex(NAME, name);
-        own.addEdge(COUNTRY, country.toGraph(graph));
-        return own;
+    public Vertex toGraph(UniqueCheckerProvider uniqueCheckerProvider) {
+        return uniqueCheckerProvider.forPersistent(this).getVertex(graph -> {
+            Vertex own = graph.addVertex(NAME, name);
+            own.addEdge(COUNTRY, country.toGraph(uniqueCheckerProvider));
+            return own;
+        });
     }
 }

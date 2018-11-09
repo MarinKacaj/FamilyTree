@@ -1,7 +1,10 @@
 package com.family.tree.person;
 
 import com.family.tree.city.City;
-import com.lambdazen.bitsy.BitsyGraph;
+import com.family.tree.persistence.Persistent;
+import com.family.tree.persistence.UniqueCheckerProvider;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 
 import java.util.LinkedList;
@@ -28,7 +31,6 @@ public abstract class Person implements Persistent {
     protected final City bornIn;
     public final Integer birthYear;
     protected final Integer deathYear;
-    public final PersonFilter filter;
 
     protected Person(Female mother, Male father, boolean isAdopted, String firstName, String lastName,
                      City bornIn, Integer birthYear, Integer deathYear) {
@@ -41,7 +43,6 @@ public abstract class Person implements Persistent {
         this.birthYear = birthYear;
         this.deathYear = deathYear;
         this.children = new LinkedList<>();
-        this.filter = new PersonFilter(this);
         addToParents();
     }
 
@@ -71,26 +72,62 @@ public abstract class Person implements Persistent {
     }
 
     @Override
-    public Vertex toGraph(BitsyGraph graph) {
-        Vertex own = graph.addVertex(
-                IS_ADOPTED, isAdopted,
-                FIRST_NAME, firstName,
-                LAST_NAME, lastName,
-                BORN_IN, bornIn,
-                BIRTH_YEAR, birthYear,
-                DEATH_YEAR, deathYear);
-        mother().ifPresent(mother -> {
-            Vertex motherVertex = mother.toGraph(graph);
-            own.addEdge(MOTHER, motherVertex);
+    public Vertex toGraph(UniqueCheckerProvider uniqueCheckerProvider) {
+        return uniqueCheckerProvider.forPersistent(this).getVertex(graph -> {
+            Vertex own = graph.addVertex(
+                    IS_ADOPTED, isAdopted,
+                    FIRST_NAME, firstName,
+                    LAST_NAME, lastName,
+                    BORN_IN, bornIn,
+                    BIRTH_YEAR, birthYear,
+                    DEATH_YEAR, deathYear);
+            mother().ifPresent(mother -> {
+                Vertex motherVertex = mother.toGraph(uniqueCheckerProvider);
+                own.addEdge(MOTHER, motherVertex);
+            });
+            father().ifPresent(father -> {
+                Vertex fatherVertex = father.toGraph(uniqueCheckerProvider);
+                own.addEdge(FATHER, fatherVertex);
+            });
+            city().ifPresent(city -> {
+                Vertex cityVertex = city.toGraph(graph);
+                own.addEdge(BORN_IN, cityVertex);
+            });
+            return own;
         });
-        father().ifPresent(father -> {
-            Vertex fatherVertex = father.toGraph(graph);
-            own.addEdge(FATHER, fatherVertex);
-        });
-        city().ifPresent(city -> {
-            Vertex cityVertex = city.toGraph(graph);
-            own.addEdge(BORN_IN, cityVertex);
-        });
-        return own;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (!(o instanceof Person)) return false;
+
+        Person person = (Person) o;
+
+        return new EqualsBuilder()
+                .append(isAdopted, person.isAdopted)
+                .append(mother, person.mother)
+                .append(father, person.father)
+                .append(firstName, person.firstName)
+                .append(lastName, person.lastName)
+                .append(bornIn, person.bornIn)
+                .append(birthYear, person.birthYear)
+                .append(deathYear, person.deathYear)
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(mother)
+                .append(father)
+                .append(isAdopted)
+                .append(firstName)
+                .append(lastName)
+                .append(bornIn)
+                .append(birthYear)
+                .append(deathYear)
+                .toHashCode();
     }
 }
