@@ -19,10 +19,13 @@ public class UniqueChecker<T extends Persistent> {
     }
 
     public Vertex getVertex(Function<BitsyGraph, Vertex> vertexCreator) {
+        Vertex vertex;
         if (uniqueInstances.containsKey(instance)) {
-            return uniqueInstances.get(instance);
+            vertex = uniqueInstances.get(instance);
         } else {
-            return vertexCreator.apply(graph);
+            vertex = vertexCreator.apply(graph);
+            uniqueInstances.put(instance, vertex);
         }
+        return vertex;
     }
 }
