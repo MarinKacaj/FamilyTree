@@ -3,6 +3,8 @@ package com.family.tree.city;
 import com.family.tree.country.Country;
 import com.family.tree.persistence.Persistent;
 import com.family.tree.persistence.UniqueCheckerProvider;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 
 public class City implements Persistent {
@@ -25,5 +27,27 @@ public class City implements Persistent {
             own.addEdge(COUNTRY, country.toGraph(uniqueCheckerProvider));
             return own;
         });
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (!(o instanceof City)) return false;
+
+        City city = (City) o;
+
+        return new EqualsBuilder()
+                .append(name, city.name)
+                .append(country, city.country)
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(name)
+                .append(country)
+                .toHashCode();
     }
 }
