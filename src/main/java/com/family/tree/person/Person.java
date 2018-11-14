@@ -5,6 +5,7 @@ import com.family.tree.persistence.Persistent;
 import com.family.tree.persistence.UniqueCheckerProvider;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.tinkerpop.gremlin.structure.T;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 
 import java.util.LinkedList;
@@ -13,6 +14,7 @@ import java.util.Optional;
 
 public abstract class Person implements Persistent {
 
+    public static final String ENTITY_NAME = "Person";
     public static final String MOTHER = "mother";
     public static final String FATHER = "father";
     public static final String IS_ADOPTED = "isAdopted";
@@ -73,8 +75,9 @@ public abstract class Person implements Persistent {
 
     @Override
     public Vertex toGraph(UniqueCheckerProvider uniqueCheckerProvider) {
-        return uniqueCheckerProvider.forPersistent(this).getVertex(graph -> {
+        return uniqueCheckerProvider.personUniqueChecker.getVertex(this, graph -> {
             Vertex own = graph.addVertex(
+                    T.label, ENTITY_NAME,
                     IS_ADOPTED, isAdopted,
                     FIRST_NAME, firstName,
                     LAST_NAME, lastName,

@@ -10,29 +10,15 @@ import java.util.Map;
 
 public class UniqueCheckerProvider {
 
-    private final Map<Person, Vertex> uniquePeople;
-    private final Map<City, Vertex> uniqueCities;
-    private final Map<Country, Vertex> uniqueCountries;
-    private final BitsyGraph graph;
+    public final UniqueChecker<Person> personUniqueChecker;
+    public final UniqueChecker<City> cityUniqueChecker;
+    public final UniqueChecker<Country> countryUniqueChecker;
 
     public UniqueCheckerProvider(Map<Person, Vertex> uniquePeople,
                                  Map<City, Vertex> uniqueCities,
                                  Map<Country, Vertex> uniqueCountries, BitsyGraph graph) {
-        this.uniquePeople = uniquePeople;
-        this.uniqueCities = uniqueCities;
-        this.uniqueCountries = uniqueCountries;
-        this.graph = graph;
-    }
-
-    public UniqueChecker<Person> forPersistent(Person person) {
-        return new UniqueChecker<>(uniquePeople, person, graph);
-    }
-
-    public UniqueChecker<City> forPersistent(City city) {
-        return new UniqueChecker<>(uniqueCities, city, graph);
-    }
-
-    public UniqueChecker<Country> forPersistent(Country country) {
-        return new UniqueChecker<>(uniqueCountries, country, graph);
+        this.personUniqueChecker = new UniqueChecker<>(uniquePeople, graph);
+        this.cityUniqueChecker = new UniqueChecker<>(uniqueCities, graph);
+        this.countryUniqueChecker = new UniqueChecker<>(uniqueCountries, graph);
     }
 }

@@ -4,10 +4,12 @@ import com.family.tree.persistence.Persistent;
 import com.family.tree.persistence.UniqueCheckerProvider;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.tinkerpop.gremlin.structure.T;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 
 public class Country implements Persistent {
 
+    public static final String ENTITY_NAME = "Country";
     public static final String NAME = "name";
 
     public final String name;
@@ -18,8 +20,8 @@ public class Country implements Persistent {
 
     @Override
     public Vertex toGraph(UniqueCheckerProvider uniqueCheckerProvider) {
-        return uniqueCheckerProvider.forPersistent(this)
-                .getVertex(graph -> graph.addVertex(NAME, name));
+        return uniqueCheckerProvider.countryUniqueChecker
+                .getVertex(this, graph -> graph.addVertex(T.label, ENTITY_NAME, NAME, name));
     }
 
     @Override
