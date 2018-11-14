@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d17829f-3b9f-410f-b330-067fca7505bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/Query.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/family/tree/city/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/family/tree/city/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/family/tree/country/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/family/tree/country/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/Parser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/UniqueChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/UniqueChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/UniqueCheckerProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/UniqueCheckerProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/family/tree/person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/family/tree/person/Person.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,32 +32,32 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="48" />
+          <entry key="class" value="51" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="55" />
+          <entry key="java" value="57" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="48" />
+          <entry key="CLASS" value="51" />
           <entry key="Git file" value="2" />
-          <entry key="JAVA" value="55" />
+          <entry key="JAVA" value="57" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="java" value="6020" />
-          <entry key="txt" value="296" />
+          <entry key="java" value="6288" />
+          <entry key="txt" value="326" />
           <entry key="xml" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6020" />
-          <entry key="PLAIN_TEXT" value="306" />
+          <entry key="JAVA" value="6288" />
+          <entry key="PLAIN_TEXT" value="336" />
           <entry key="XML" value="49" />
         </counts>
       </usages-collector>
@@ -71,14 +66,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/person/Person.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state relative-caret-position="-163">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/persistence/Query.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tinkerpop/gremlin-core/3.3.4/gremlin-core-3.3.4.jar!/org/apache/tinkerpop/gremlin/process/traversal/dsl/graph/GraphTraversal.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="278" column="35" selection-start-line="278" selection-start-column="35" selection-end-line="278" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -92,15 +108,6 @@
                 <element signature="e#224#225#0" expanded="true" />
                 <element signature="e#268#269#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/persistence/Persistent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -120,8 +127,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/city/City.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="414">
+              <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/country/Country.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -185,13 +204,14 @@
         <option value="$PROJECT_DIR$/src/test/java/com/family/tree/person/PersonFilterTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/family/tree/util/Either.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/UniqueChecker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/family/tree/city/City.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/family/tree/country/Country.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/UniqueCheckerProvider.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/PersistentProperty.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/Persistent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/family/tree/person/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/Parser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/family/tree/city/City.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/family/tree/country/Country.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/family/tree/persistence/Query.java" />
       </list>
     </option>
   </component>
@@ -287,7 +307,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542211276965" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542211626833" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
   </component>
@@ -458,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542049103581</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added labels to vertices">
+      <created>1542211382494</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1542211382494</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -518,7 +545,8 @@
     <MESSAGE value="Updated test" />
     <MESSAGE value="Added equals and hash code for city and country" />
     <MESSAGE value="Added basic parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added basic parser" />
+    <MESSAGE value="Added labels to vertices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added labels to vertices" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -659,40 +687,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/country/Country.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/city/City.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/persistence/UniqueCheckerProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/persistence/UniqueChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -756,24 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/persistence/Persistent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/util/Either.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding>
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#268#269#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tinkerpop/gremlin-core/3.3.4/gremlin-core-3.3.4.jar!/org/apache/tinkerpop/gremlin/structure/T.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -805,10 +785,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/country/Country.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/persistence/Persistent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/city/City.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/persistence/UniqueChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/util/Either.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding>
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/person/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        <state relative-caret-position="-163">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tinkerpop/gremlin-core/3.3.4/gremlin-core-3.3.4.jar!/org/apache/tinkerpop/gremlin/process/traversal/step/map/GraphStep.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="39" column="168" lean-forward="true" selection-start-line="39" selection-start-column="168" selection-end-line="39" selection-end-column="168" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tinkerpop/gremlin-core/3.3.4/gremlin-core-3.3.4.jar!/org/apache/tinkerpop/gremlin/process/traversal/dsl/graph/GraphTraversalSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="229" column="42" selection-start-line="229" selection-start-column="42" selection-end-line="229" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tinkerpop/gremlin-core/3.3.4/gremlin-core-3.3.4.jar!/org/apache/tinkerpop/gremlin/process/traversal/dsl/graph/GraphTraversal.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="278" column="35" selection-start-line="278" selection-start-column="35" selection-end-line="278" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/family/tree/persistence/Query.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
