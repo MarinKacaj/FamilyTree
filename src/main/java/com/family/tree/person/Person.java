@@ -15,8 +15,12 @@ import java.util.Optional;
 public abstract class Person implements Persistent {
 
     public static final String ENTITY_NAME = "Person";
+    public static final String MALE = "M";
+    public static final String FEMALE = "F";
+
     public static final String MOTHER = "mother";
     public static final String FATHER = "father";
+    public static final String GENDER = "gender";
     public static final String IS_ADOPTED = "isAdopted";
     public static final String FIRST_NAME = "firstName";
     public static final String LAST_NAME = "lastName";
@@ -81,6 +85,7 @@ public abstract class Person implements Persistent {
                     IS_ADOPTED, isAdopted,
                     FIRST_NAME, firstName,
                     LAST_NAME, lastName,
+                    GENDER, isMale() ? MALE : FEMALE,
                     BORN_IN, bornIn,
                     BIRTH_YEAR, birthYear,
                     DEATH_YEAR, deathYear);
